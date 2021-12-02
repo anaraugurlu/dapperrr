@@ -50,10 +50,20 @@ namespace dapperrr.DataAcces.DupperServer
       
         public Book GetData(int id)
         {
-            using (var context = new MyContext())
+            using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString))
             {
-                var data = context.Books .Include("Bookss").FirstOrDefault(c => c.Id == id);
-                return data;
+                var player = connection.QueryFirstOrDefault("select * from Books where Id=@PId",
+                    new { PId = id });
+
+                return new Book
+                {
+                    Id = player.Id,
+                    Name = player.Name,
+                    Authorname =player.AuthorName,
+                    Price =player.Price
+                   
+                };
+
             }
         }
         public void UpdateData(Book data)
@@ -65,15 +75,15 @@ namespace dapperrr.DataAcces.DupperServer
                     new { PId = data.Id, PName = data.Name, PPrice = data.Price });
             }
         }
-        ObservableCollection<Book> IRepository<Book>.GetAllData()
+        List <Book> IRepository<Book>.GetAllData()
         {
-            ObservableCollection <Book> books = new ObservableCollection<Book> ();
+            List <Book> players = new List<Book> ();
             using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString))
             {
-                connection.Open();
-                books = connection.Query<Book>("SELECT Id, Name, Price from Books").ToList ();
+                players = connection.Query<Book>("SELECT Id,Name,Price,AuthorName from Books").ToList ();
             }
-            return books;
+            return players;
+          
         }
     }
 }

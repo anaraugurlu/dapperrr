@@ -26,6 +26,7 @@ namespace dapperrr
             InitializeComponent();
             var vm = new MainViewModel();
             this.DataContext = vm;
+            App.DB.BookRepository.CallSp();
         }
     }
 }

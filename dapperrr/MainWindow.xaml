@@ -46,13 +46,13 @@
         <TextBlock FontSize="22"> Name</TextBlock>
 
   
-    <TextBlock FontSize="22">Price</TextBlock>
+    <!--<TextBlock FontSize="22">Price</TextBlock>
     <TextBox FontSize="22" Text="{Binding SelectedBook.Price}" ></TextBox>
     <TextBlock FontSize="22">AuthorName</TextBlock>
     <TextBox FontSize="22" Text="{Binding SelectedBook.AuthorName}" ></TextBox>
     <Button Command="{Binding AddCommand}" Margin="0,5,0,0" FontSize="22">Add</Button>
     <Button Command="{Binding UpdateCommand}" Margin="0,5,0,0" FontSize="22">Update</Button>
-    <Button Command="{Binding DeleteCommand}" Margin="0,5,0,0" FontSize="22">delete</Button>
+    <Button Command="{Binding DeleteCommand}" Margin="0,5,0,0" FontSize="22">delete</Button>-->
    
     </ListView>
     

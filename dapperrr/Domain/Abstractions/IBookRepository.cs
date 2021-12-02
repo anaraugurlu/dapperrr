@@ -10,8 +10,5 @@ namespace dapperrr.Domain.Abstractions
     public interface IBookRepository : IRepository<Book>
     {
 
-
-
-
     }
 }

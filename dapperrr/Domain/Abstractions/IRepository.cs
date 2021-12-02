@@ -12,7 +12,7 @@ namespace dapperrr.Domain.Abstractions
     {
         T GetData(int book);
         void CallSp();
-        ObservableCollection<Book> GetAllData();
+        List<Book> GetAllData();
         void AddData(Book book);
         void UpdateData(T data);
         void DeleteData(int id);

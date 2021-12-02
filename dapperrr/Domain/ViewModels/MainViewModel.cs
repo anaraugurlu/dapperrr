@@ -17,6 +17,7 @@ namespace dapperrr.Domain.ViewModels
         public RelayCommand UpdateCommand { get; set; }
         public RelayCommand ResetCommand { get; set; }
         public RelayCommand DeleteOrderCommand { get; set; }
+        public MainWindow main { get; set; }
         public RelayCommand DeleteBookCommand { get; set; }
         public MainViewModel()
         {
@@ -70,8 +71,8 @@ namespace dapperrr.Domain.ViewModels
                 SelectedBook = new Book();
             });
         }
-        private ObservableCollection<Book> allBooks;
-        public ObservableCollection<Book> AllBooks
+        private List<Book> allBooks;
+        public List<Book> AllBooks
         {
             get { return allBooks; }
             set { allBooks = value; OnPropertyChanged(); }

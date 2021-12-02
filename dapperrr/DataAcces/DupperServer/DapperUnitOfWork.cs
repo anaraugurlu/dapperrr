@@ -12,6 +12,6 @@ namespace dapperrr.DataAcces.DupperServer
     {
      
 
-        public IBookRepository BookRepository => throw new NotImplementedException();
+        public IBookRepository BookRepository => new DapperBookRepository();
     }
 }
