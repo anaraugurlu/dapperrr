@@ -23,7 +23,6 @@ namespace dapperrr.DataAcces.DupperServer
                 connection.Open();
                 connection.Execute("INSERT INTO Books(Id,Name,Price) VALUES(@PId,@ProductName,@ProductPrice)"
                     , new {PId=book.Id , ProductName = book.Name, ProductPrice = book.Price });
-
             }
         }
         
