@@ -48,9 +48,9 @@ namespace dapperrr.DataAcces.DupperServer
                 {
                     Id = player.Id,
                     Name = player.Name,
-                    Authorname =player.AuthorName,
-                    Price =player.Price
-                   
+                    Authorname = player.AuthorName,
+                    Price = player.Price
+
                 };
 
             }

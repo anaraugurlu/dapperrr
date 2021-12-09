@@ -5,57 +5,69 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dapperrr" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <ListView   SelectedItem="{Binding SelectedBook}" Background="Bisque " ItemsSource="{Binding AllBooks}">
-                
-        <i:Interaction.Triggers>
-            <i:EventTrigger EventName="SelectionChanged">
-                <i:InvokeCommandAction Command="{Binding SelectBookCommand}"
+        Title="MainWindow" Height="474" Width="807.5">
+
+    <Grid>
+
+        <StackPanel Background="Bisque"  >
+
+            <ListView   SelectedItem="{Binding SelectedBook}" Background="Bisque " ItemsSource="{Binding AllBooks}">
+
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding SelectBookCommand}"
                            />
-            </i:EventTrigger>
-        </i:Interaction.Triggers>
-        <ListView.View>
-            <GridView>
-                <GridViewColumn Header="Name" Width="100">
-                    <GridViewColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Padding="5,0" Text="{Binding Name}" ></TextBlock>
-                        </DataTemplate>
-                    </GridViewColumn.CellTemplate>
-                </GridViewColumn>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Name" Width="100">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Padding="5,0" Text="{Binding Name}" ></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
 
-                <GridViewColumn Header="Price" Width="100">
-                    <GridViewColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Padding="5,0" Text="{Binding Price}" ></TextBlock>
-                        </DataTemplate>
-                    </GridViewColumn.CellTemplate>
-                </GridViewColumn>
-                <GridViewColumn Header="AuthorName" Width="100">
-                    <GridViewColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Padding="5,0" Text="{Binding AuthorName}" ></TextBlock>
-                        </DataTemplate>
-                    </GridViewColumn.CellTemplate>
-                </GridViewColumn>
-            </GridView>
-        </ListView.View>
+                        <GridViewColumn Header="Price" Width="100">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Padding="5,0" Text="{Binding Price}" ></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="AuthorName" Width="100">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Padding="5,0" Text="{Binding AuthorName}" ></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
 
 
-                              <TextBox FontSize="22" Text="{Binding SelectedBook.Name}" ></TextBox>
-        <TextBlock FontSize="22"> Name</TextBlock>
 
-  
-    <!--<TextBlock FontSize="22">Price</TextBlock>
-    <TextBox FontSize="22" Text="{Binding SelectedBook.Price}" ></TextBox>
-    <TextBlock FontSize="22">AuthorName</TextBlock>
-    <TextBox FontSize="22" Text="{Binding SelectedBook.AuthorName}" ></TextBox>
-    <Button Command="{Binding AddCommand}" Margin="0,5,0,0" FontSize="22">Add</Button>
-    <Button Command="{Binding UpdateCommand}" Margin="0,5,0,0" FontSize="22">Update</Button>
-    <Button Command="{Binding DeleteCommand}" Margin="0,5,0,0" FontSize="22">delete</Button>-->
-   
-    </ListView>
-    
-        
 
+            </ListView>
+
+
+
+            <TextBlock FontSize="22"> Id</TextBlock>
+            <TextBox FontSize="22" Text="{Binding SelectedBook.Id}" ></TextBox>
+            <TextBlock FontSize="22"> Name</TextBlock>
+            <TextBox FontSize="22" Text="{Binding SelectedBook.Name}" ></TextBox>
+            <TextBlock FontSize="22">Price</TextBlock>
+            <TextBox FontSize="22" Text="{Binding SelectedBook.Price}" ></TextBox>
+            <TextBlock FontSize="22">AuthorName</TextBlock>
+            <TextBox FontSize="22" Text="{Binding SelectedBook.AuthorName}" ></TextBox>
+            <StackPanel HorizontalAlignment="Right"  Orientation="Horizontal" >
+                
+            <Button Background="OrangeRed" Height=" 40" Width="60"   Command="{Binding AddCommand}"  FontSize="22">Add</Button>
+                <Button Background="OrangeRed"   Height=" 40" Width="100"  Margin=" 20" Command="{Binding UpdateCommand}"  FontSize="22">Update</Button>
+                <Button Background="OrangeRed"   Height=" 40" Width="100"   Command="{Binding DeleteBookCommand}" Margin="0,5,0,0" FontSize="22">delete</Button>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
 </Window>
