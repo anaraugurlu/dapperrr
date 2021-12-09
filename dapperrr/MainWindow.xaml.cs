@@ -24,9 +24,9 @@ namespace dapperrr
         public MainWindow()
         {
             InitializeComponent();
-            var vm = new MainViewModel();
-            this.DataContext = vm;
-           
+         
+            this.DataContext = new MainViewModel(this);
+
         }
     }
 }

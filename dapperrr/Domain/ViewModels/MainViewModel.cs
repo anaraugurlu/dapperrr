@@ -19,7 +19,7 @@ namespace dapperrr.Domain.ViewModels
         public RelayCommand DeleteOrderCommand { get; set; }
         public MainWindow main { get; set; }
         public RelayCommand DeleteBookCommand { get; set; }
-        public MainViewModel()
+        public MainViewModel(MainWindow mainWindow)
         {
             SelectedBook = new Book();
             AllBooks = App.DB.BookRepository .GetAllData ();
