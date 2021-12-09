@@ -11,7 +11,7 @@ namespace dapperrr.Domain.Abstractions
     public interface IRepository<T>
     {
         T GetData(int book);
-        void CallSp();
+        
         List<Book> GetAllData();
         void AddData(Book book);
         void UpdateData(T data);

@@ -26,18 +26,7 @@ namespace dapperrr.DataAcces.DupperServer
 
             }
         }
-        public void CallSp()
-        {
-            using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString))
-            {
-                DynamicParameters parameter = new DynamicParameters();
-                connection.Open();
-                parameter.Add("@P_Price", DbType.Decimal);
-                var data = connection.Query<Book>("ShowGreaterThan",
-    parameter,
-    commandType: CommandType.StoredProcedure);
-            }
-        }
+        
         public void DeleteData(int id)
         {
             using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString))
