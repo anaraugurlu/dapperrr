@@ -21,8 +21,8 @@ namespace dapperrr.DataAcces.DupperServer
             using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString))
             {
                 connection.Open();
-                connection.Execute("INSERT INTO Books(Name,Price) VALUES(@ProductName,@ProductPrice)"
-                    , new { ProductName = book.Name, ProductPrice = book.Price });
+                connection.Execute("INSERT INTO Books(Id,Name,Price) VALUES(@PId,@ProductName,@ProductPrice)"
+                    , new {PId=book.Id , ProductName = book.Name, ProductPrice = book.Price });
 
             }
         }
@@ -50,7 +50,6 @@ namespace dapperrr.DataAcces.DupperServer
                     Name = player.Name,
                     Authorname = player.AuthorName,
                     Price = player.Price
-
                 };
 
             }

@@ -53,8 +53,6 @@
 
 
 
-            <TextBlock FontSize="22"> Id</TextBlock>
-            <TextBox FontSize="22" Text="{Binding SelectedBook.Id}" ></TextBox>
             <TextBlock FontSize="22"> Name</TextBlock>
             <TextBox FontSize="22" Text="{Binding SelectedBook.Name}" ></TextBox>
             <TextBlock FontSize="22">Price</TextBlock>
