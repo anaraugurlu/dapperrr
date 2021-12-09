@@ -21,8 +21,8 @@ namespace dapperrr.DataAcces.DupperServer
             using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString))
             {
                 connection.Open();
-                connection.Execute("INSERT INTO Books(Id,Name,Price) VALUES(@PId,@ProductName,@ProductPrice)"
-                    , new {PId=book.Id , ProductName = book.Name, ProductPrice = book.Price });
+                connection.Execute("INSERT INTO Books(Name,Price) VALUES(@ProductName,@ProductPrice)"
+                    , new { ProductName = book.Name, ProductPrice = book.Price  });
             }
         }
         
@@ -42,7 +42,13 @@ namespace dapperrr.DataAcces.DupperServer
             {
                 var player = connection.QueryFirstOrDefault("select * from Books where Id=@PId",
                     new { PId = id });
-
+                if (player == null)
+                {
+                    return new Book
+                    {
+                        Id = 0
+                    };
+                }
                 return new Book
                 {
                     Id = player.Id,

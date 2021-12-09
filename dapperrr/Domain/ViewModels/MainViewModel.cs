@@ -51,9 +51,12 @@ namespace dapperrr.Domain.ViewModels
             });
             AddCommand = new RelayCommand((sender) =>
             {
+
                 var item = App.DB.BookRepository.GetData(SelectedBook.Id );
-                if (item == null)
+               
+                if (item.Id==0)
                 {
+                    
                     App.DB.BookRepository.AddData(SelectedBook);
                     AllBooks = App.DB.BookRepository .GetAllData ();
                     MessageBox.Show("Add Successfully");
